@@ -106,7 +106,7 @@ switch phase
         % its conjugate reciprocal (i.e. "Flipping").
         r(imag(r)>=0) = 1./conj(r(imag(r) >= 0));
         % Convert from root-format to polynomial format
-        b = poly(leja(r));
+        b = poly(leja_fast(r));
         % Normalise filter response.
         b = b/max(abs(freqz(b)));
         if quiet == 0
